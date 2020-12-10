@@ -18,9 +18,16 @@ namespace DojoSurveyModel.Controllers
             _logger = logger;
         }
 
+        [HttpGet("")]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost("process")]
+        public IActionResult Result(Survey list)
+        {
+            return View("Result", list);
         }
 
         public IActionResult Privacy()
